@@ -1,4 +1,4 @@
-import { object, string, date, boolean } from "yup";
+import { object, string, date } from "yup";
 
 export const todoSchema = object({
     name: string()

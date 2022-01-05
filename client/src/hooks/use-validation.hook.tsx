@@ -35,7 +35,7 @@ export const useValidation = (props: ValidationHookProps) => {
 
     useEffect(() => {
         validate();
-    }, [object, schema]);
+    }, [object, schema, validate]);
 
     return [isValid, validationErrors];
 }

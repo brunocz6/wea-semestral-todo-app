@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "outDir": "dist",
+        "esModuleInterop": true,
+        "strictNullChecks": true,
+        "strict": false,
+        "allowJs": true,
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true
+    },
+    "include": [
+        "src"
+    ]
+}

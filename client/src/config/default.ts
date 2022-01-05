@@ -2,7 +2,7 @@
  * Obecná konfigurace aplikace.
  */
 const CONFIG = {
-    apiUrl: "http://localhost:1337/api/",
+    apiUrl: "http://localhost:8080/api/",
     userStorageKey: "aU"
 };
 

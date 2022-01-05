@@ -4,8 +4,9 @@ import log from "./logger";
 import connect from "./db/connect";
 import routes from "./routes";
 import { deserializeUser } from "./middleware";
+import path from "path";
 
-const port = config.get("port") as number;
+const port = (process.env.port && parseInt(process.env.port)) || config.get("port") as number;
 const host = config.get("host") as string;
 
 const app = express();
@@ -29,3 +30,10 @@ app.listen(port, host, () => {
     connect();
     routes(app);
 });
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "../client/build")));
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+    })
+}

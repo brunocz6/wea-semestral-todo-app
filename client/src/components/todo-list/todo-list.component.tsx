@@ -105,7 +105,7 @@ const TodoList: FC<TodoListProps> = (props) => {
                 (t.name.indexOf(searchTermDebounced) > -1 || (t.description && t.description.indexOf(searchTermDebounced) > -1))
             )
             .map(t => <TodoListItem item={t} onIsDoneChangedHandler={onIsDoneChangedHandler} onEditButtonClickedHandler={onTodoEditorOpennedHandler} onRemoveButtonClickedHandler={onTodoRemoveDialogOpennedHandler} />);
-    }, [todos, searchTermDebounced, showOnlyUndone]);
+    }, [todos, searchTermDebounced, showOnlyUndone, onIsDoneChangedHandler, onTodoEditorOpennedHandler, onTodoRemoveDialogOpennedHandler]);
 
     return (
         <>

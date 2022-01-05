@@ -1,9 +1,8 @@
 import { Person } from "@mui/icons-material";
 import { LoadingButton } from "@mui/lab";
 import { Alert, Avatar, Box, Container, Paper, Snackbar, Stack, TextField, Typography } from "@mui/material";
-import { FC, useCallback, useEffect, useMemo, useState } from "react";
+import { FC, useCallback, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { couldStartTrivia } from "typescript";
 import InputValidation from "../../common/input-validation.component";
 import { useDebounce } from "../../hooks/use-debounce.hook";
 import { useValidation } from "../../hooks/use-validation.hook";
@@ -91,7 +90,7 @@ const Register: FC<RegisterProps> = (props) => {
                 .then(
                     res => {
 
-                        if (res.status == 200) {
+                        if (res.status === 200) {
                             setShowSuccess(true);
                         }
                     },

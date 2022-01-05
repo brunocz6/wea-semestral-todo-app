@@ -70,7 +70,7 @@ const Login: FC<LoginProps> = ({ onSuccess }) => {
                     }
                 );
         }
-    }, [isValid]);
+    }, [isValid, emailDebounced, onSuccess, passwordDebounced]);
 
     return (
         <Box sx={{ height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -103,7 +103,7 @@ const Login: FC<LoginProps> = ({ onSuccess }) => {
                         </Typography>
 
                         {/* Potvrzení formuláře */}
-                        <LoadingButton onClick={onSubmitHandler} variant="contained" fullWidth>Přihlásit</LoadingButton>
+                        <LoadingButton onClick={onSubmitHandler} variant="contained" fullWidth loading={isWaitingForServer}>Přihlásit</LoadingButton>
 
                         {/* Hláška o selhání přihlášení */}
                         <Snackbar open={showLoginFailedError} autoHideDuration={5000}>

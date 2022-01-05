@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { LocalizationProvider } from "@mui/lab";
-import { Container, ThemeProvider } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
 import { FC } from "react";
 import theme from "../../styles/theme";
 import DateAdapter from '@mui/lab/AdapterMoment';

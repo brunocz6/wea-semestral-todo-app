@@ -79,7 +79,7 @@ const TodoEditor: FC<TodoEditorProps> = ({ item, open, onClose, onSuccess }) => 
                 setDeadline(undefined);
             });
         }
-    }, [isValid, formData]);
+    }, [isValid, formData, onSuccess, item]);
 
     // Po změně zvoleného úkolu.
     useEffect(() => {

@@ -3,8 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "engines": {
+    "node": "14.18.2"
+  },
   "scripts": {
-    "dev": "nodemon --config nodemon.json src/app.ts"
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "dev": "nodemon --config nodemon.json src/app.ts",
+    "start": "node dist/app.js",
+    "postinstall": "tsc",
+    "build": "tsc src/app.ts",
+    "watch-node": "nodemon dist/index.js",
+    "watch-ts": "tsc -w",
+    "deploy": "git add . && git commit -m Heroku && git push heroku"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
